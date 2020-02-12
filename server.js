@@ -3,6 +3,8 @@ const express = require('express');
 const userRouter = require('./users/userRouter.js');
 const postRouter = require('./posts/postRouter.js');
 
+const Users = require('./users/userDb.js');
+
 const server = express();
 
 server.use(express.json());
@@ -21,6 +23,8 @@ server.get('/', (req, res) => {
 function logger(req, res, next) {
   console.log(`${req.method} request to ${req.originalUrl} at [${new Date().toISOString()}] `);
   next();
-}
+};
+
+
 
 module.exports = server;
