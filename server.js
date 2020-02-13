@@ -9,8 +9,8 @@ const server = express();
 
 server.use(express.json());
 
-server.use('/api/users', userRouter);
-server.use('/api/posts', postRouter);
+server.use('/api/users', logger, userRouter);
+server.use('/api/posts', logger, postRouter);
 
 server.use(logger);
 
@@ -24,7 +24,6 @@ function logger(req, res, next) {
   console.log(`${req.method} request to ${req.originalUrl} at [${new Date().toISOString()}] `);
   next();
 };
-
 
 
 module.exports = server;
