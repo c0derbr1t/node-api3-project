@@ -1,5 +1,6 @@
 require('dotenv').config(); // added for Thursday's project
 // code away!
+
 const server = require('./server.js');
 
 // added for Thurday's project
